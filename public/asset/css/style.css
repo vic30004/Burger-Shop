@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Shadows+Into+Light&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --main-color: #c76368;
+  --secondary-color: #F57560;
+  --third-color: #F5BF60;
+  --light-color: ivory;
+  --dark-color: #111;
+  --max-width: 1900px;
+  --main-font: 2rem;
+  --title-font:'Permanent Marker', cursive;
+  --main-font-style: 'Shadows Into Light', cursive;
+}
+
+body{
+    overflow: hidden;
+    font-family: var(--main-font-style);
+    height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+a {
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: var(--main-font);
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+img{
+    display: block;
+    width:100%;
+    height: 100%;
+}
+
+h1,h2,h3{
+    font-family: var(--title-font);
+    font-size: 2.3rem;
+    font-weight: bolder;
+    color: var(--third-color);
+    padding: 1rem 0;
+    letter-spacing: .3rem;
+}
+
+/* utility */
+
+.py-1 {
+  padding: 1rem;
+}
+
+.py-2 {
+  padding: 2rem;
+}
+
+.py-3 {
+  padding: 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  background: var(--dark-color);
+  padding: 1rem;
+  /* width: 50%; */
+  display: inline-block;
+  border-radius: 20px;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn:hover{
+    color: var(--dark-color);
+}
+
+.btn::before{
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--secondary-color);
+    top: 0;
+    left:140%;
+    z-index: -1;
+    transform: skew(45deg);
+    transition:all .5s ease-in-out;
+}
+.btn::after{
+    content:'';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--third-color);
+    top: 0;
+    left:-140%;
+    z-index:-1;
+    transform: skew(45deg);
+    transition:all .5s ease-in-out;
+
+}
+
+.btn:hover:before{
+    left:50%;
+}
+.btn:hover:after{
+    left:-50%;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    flex-flow: column wrap;
+    width: var(--max-width);
+  }
+
+  /* hero head */
+
+#hero-head {
+  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1477617722074-45613a51bf6d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
+    no-repeat center center/cover;
+    position: relative;
+    z-index: 1;
+}
+
+#hero-head::before{
+    position: absolute;
+    content:'';
+    height: 100%;
+    width: 100%;
+    left:0;
+    top:0;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+}
+
+#hero-head .container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100%;
+  flex-flow: column wrap;
+  width: var(--max-width);
+}
+
+/* main */
+
+#main-content{
+    height: 100vh;
+    background: var(--main-color);
+}
+
+#main-content .container .pic{
+    width: 200px;
+    margin: 0 auto;
+}
+
+
+
+textarea#order {
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}

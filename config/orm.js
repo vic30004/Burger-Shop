@@ -61,7 +61,7 @@ const orm = {
            if (err){
                throw err;
            }
-           console.table(res)
+           cb(res)
        })
    },
    update: function(table,obj,cols,condition,cb){

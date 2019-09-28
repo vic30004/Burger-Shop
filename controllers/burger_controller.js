@@ -13,10 +13,10 @@ router.get("/",function(req,res){
 });
 
 router.post("/api/burgers/:id",function(req,res){
-    let condition = `id = ${req.params.id}`;
+    let condition = req.params.id;
     console.log("condition", condition);
 
-    burger.update("burger_name",condition,function(res){
+    burger.add("burger_name",condition,function(res){
         if(res.changedRows === 0){
             return res.status(404).end();
         }
