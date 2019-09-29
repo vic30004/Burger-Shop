@@ -18,9 +18,8 @@
 }
 
 body{
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: var(--main-font-style);
-    height: 100vh;
 }
 
 html {
@@ -34,6 +33,10 @@ a {
   font-size: var(--main-font);
   transition: all 1s ease;
   cursor: pointer;
+}
+
+li{
+  list-style-type: none;
 }
 
 img{
@@ -126,6 +129,23 @@ h1,h2,h3{
     width: var(--max-width);
   }
 
+  .card{
+    background: var(--dark-color);
+    color: var(--third-color);
+    margin: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    flex-flow: column nowrap;
+    font-size: 1.5rem;
+  }
+
+    .test1{
+      width:50%;;
+    }
+    .test2{
+      width:50%;;
+    }
+
   /* hero head */
 
 #hero-head {
@@ -159,7 +179,7 @@ h1,h2,h3{
 /* main */
 
 #main-content{
-    height: 100vh;
+    /* height: 100vh; */
     background: var(--main-color);
 }
 
@@ -168,6 +188,45 @@ h1,h2,h3{
     margin: 0 auto;
 }
 
+#main-content .requests{
+  display: flex;
+  width: 60%;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 20%;
+}
+
+
+#main-content .requests .eat{
+  display: flex;
+  flex-flow: column wrap;
+  height: 100%;
+  width:50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* #main-content .requests .eat .card{
+  background: var(--dark-color);
+  color: var(--third-color);
+  margin: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+  flex-flow: row nowrap;
+  font-size: 1.5rem;
+} */
+
+
+#main-content .requests .eat a {
+  color: var(--dark-color);
+}
+
+#main-content .requests .ate .card{
+  width: 50%;
+  justify-content: center;
+  margin:1rem auto;
+}
 
 
 textarea#order {

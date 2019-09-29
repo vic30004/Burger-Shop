@@ -50,13 +50,12 @@ const orm = {
             if (err){
                 throw err;
             }
-            cb(res)
+            cb(res.rows)
         });
     },
    add: function(table, cols, vals, cb) {
        let queryString = `INSERT INTO ${table}`;
-       queryString+= `(${cols.toString()}) VALUES ($1)`
-       console.log(queryString);
+       queryString+= `(${cols}) VALUES ($1)`
        client.query(queryString, [vals], function(err, res){
            if (err){
                throw err;

@@ -5,23 +5,31 @@ const burger = require("../models/burger.js");
 router.get("/",function(req,res){
     burger.all(function(data){
         let hbsObjext = {
-            burger : data
+            burgers : data
         };
-        console.log(hbsObjext);
         res.render("index",hbsObjext);
     });
 });
 
-router.post("/api/burgers/:id",function(req,res){
-    let condition = req.params.id;
-    console.log("condition", condition);
+router.post("/api/burgers",function(req,res){
+    console.log(req.body.burger);
+    burger.add("burger_name",req.body.burger,function(){
+       res.json({id:res.insetId})
+    })
 
-    burger.add("burger_name",condition,function(res){
-        if(res.changedRows === 0){
+})
+
+router.put("/api/burgers/:id", function(req,res){
+    let condition = req.body.burger
+    console.log(condition);
+    burger.update({devoured:true},"burger_name",condition,function(data){
+        if(data.changedRows ===0){
             return res.status(404).end();
         }
         res.status(200).end();
     })
 })
 
-module.exports =router;
+
+
+module.exports=router;

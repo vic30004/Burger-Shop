@@ -7,16 +7,6 @@ const client =  new Client ({
   database:"burger"
 })
 
-// client.connect(function(err){
-//   if (err) {
-//     console.error(`error connectiong: ${err.stack}`);
-//     return;
-//   }
-//   console.log(`connected to db`)
-// });
-
-
-
 
 
 

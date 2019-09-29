@@ -16,8 +16,43 @@
             <img src="https://myrealdomain.com/images/cartoon-burger-3.png" alt="">
         </div>
         <div class="requests">
-           <div class="eat"></div> 
-           <div class="ate"></div>
+           <div class="test1">
+               <h3>Burgers to Eat</h3>
+              {{#each burgers as |value key|}}
+              {{#unless devoured}}
+              <div class="eat">
+              {{!-- {{#unless devoured}} --}}
+              <div class="card">
+                  <ul>
+               <li>{{value.burger_name}}</li>
+               
+                  </ul>
+                  
+                </div>
+                <a id="eat-btn">Eat Burger!</a>
+                {{!-- {{/unless}} --}}
+                   </div>
+                   {{/unless}}    
+                    {{/each}}
+       </div>
+       <div class="test2">
+           <h3>Burgers Ate</h3>
+            {{#each burgers}}
+               {{#if devoured}}
+           <div class="ate">
+               <div class="card">
+              <ul > 
+        
+               
+              <li>{{this.burger_name}}</li> 
+               
+               
+               </ul>
+               </div>
+           </div>
+           {{/if}}
+               {{/each}}
+             </div>  
         </div>
         <h2>What would you like to order?</h2>
         <textarea name="order" id="order" cols="30" rows="5"></textarea>
