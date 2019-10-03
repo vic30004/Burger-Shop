@@ -23,7 +23,7 @@ btn.addEventListener("click", function(e) {
 eatBtn.forEach(btn => {
   btn.addEventListener("click", function(e) {
     e.preventDefault();
-    let info = { burger: e.target.parentNode.firstElementChild.innerText };
+    let info = { burger: e.target.parentNode.firstElementChild.innerText};
     const queryUrl = "/api/burgers/:id";
     fetch(queryUrl, {
       method: "PUT",
